@@ -1,18 +1,22 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const Filter = ({ value, onChangeFilter }) => {
-  const handleChange = e => {
-    onChangeFilter(e.target.value);
+class Filter extends Component {
+  handleChange = e => {
+    this.props.onChangeFilter(e.target.value);
   };
 
-  return (
-    <div>
-      <label>
-        Filter contacts by name:
-        <input type="text" value={value} onChange={handleChange} />
-      </label>
-    </div>
-  );
-};
+  render() {
+    const { value } = this.props;
+
+    return (
+      <div>
+        <label>
+          Filter contacts by name:
+          <input type="text" value={value} onChange={this.handleChange} />
+        </label>
+      </div>
+    );
+  }
+}
 
 export default Filter;

@@ -1,3 +1,4 @@
+// ContactItem.jsx
 import React from 'react';
 
 const ContactItem = ({ contact, onDeleteContact }) => {
